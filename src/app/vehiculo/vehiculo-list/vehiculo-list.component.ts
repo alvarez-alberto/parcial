@@ -17,7 +17,6 @@ export class VehiculoListComponent implements OnInit {
 
   ngOnInit() {
     this.getVehiculos();
-    this.getTotalVehiculos();
   }
 
   getVehiculos(): void {
@@ -31,7 +30,7 @@ export class VehiculoListComponent implements OnInit {
 
     this.vehiculos.forEach(vehiculo =>{
       let totalMarca = this.totalPorMarca.get(vehiculo.marca)
-      if(totalMarca  === undefined){
+      if(!totalMarca){
         this.totalPorMarca.set(vehiculo.marca, 1)
       }else{
         this.totalPorMarca.set(vehiculo.marca, totalMarca+1)

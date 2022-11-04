@@ -1,0 +1,16 @@
+<testExecutions version="1">
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="52"/>
+    <testCase name="AppComponent should have as title 'parcial'" duration="9"/>
+  </file>
+  <file path="src/app/vehiculo/vehiculo.service.spec.ts">
+    <testCase name="Service: Book should ..." duration="3"/>
+  </file>
+  <file path="src/app/vehiculo/vehiculo-list/vehiculo-list.component.spec.ts">
+    <testCase name="VehiculoListComponent should have an dd element " duration="17"/>
+    <testCase name="VehiculoListComponent should have 7 &lt;th> elements" duration="9"/>
+    <testCase name="VehiculoListComponent should have 1 &lt;table.table> elements" duration="6"/>
+    <testCase name="VehiculoListComponent should have 1 &lt;thead.table-dark> elements" duration="8"/>
+    <testCase name="VehiculoListComponent should create" duration="7"/>
+  </file>
+</testExecutions>
