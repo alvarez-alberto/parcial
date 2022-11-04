@@ -11,38 +11,32 @@ import { VehiculoService } from '../vehiculo.service';
 export class VehiculoListComponent implements OnInit {
 
   vehiculos: Array<Vehiculo> = [];
-
+  totalPorMarca: Map<string, number> = new Map();
 
   constructor(private vehiculoService: VehiculoService) { }
 
   ngOnInit() {
-    this.getVehiculos()
+    this.getVehiculos();
+    this.getTotalVehiculos();
   }
 
   getVehiculos(): void {
     this.vehiculoService.getVehiculos().subscribe( vehiculos => {
       this.vehiculos = vehiculos;
+      this.getTotalVehiculos();
     });
-    this.getTotalVehiculos();
   }
 
-  getTotalVehiculos(): Map<string, number>{
-
-    let totales : Map <string, number> = new Map();
+  getTotalVehiculos(): void{
 
     this.vehiculos.forEach(vehiculo =>{
-
-      let totalMarca = totales.get(vehiculo.marca)
-
+      let totalMarca = this.totalPorMarca.get(vehiculo.marca)
       if(totalMarca  === undefined){
-        totales.set(vehiculo.marca, 1)
+        this.totalPorMarca.set(vehiculo.marca, 1)
       }else{
-        totales.set(vehiculo.marca, totalMarca+1)
+        this.totalPorMarca.set(vehiculo.marca, totalMarca+1)
       }
-
     });
-
-    return totales;
   }
 
 }

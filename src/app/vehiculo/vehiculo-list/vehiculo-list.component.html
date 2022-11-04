@@ -27,4 +27,11 @@
       </tbody>
     </table>
   </div>
+
+  <div >
+      <h3 *ngFor="let total of totalPorMarca | keyvalue">
+          Total {{total.key}}: {{total.value}}
+      </h3>
+  </div>
+
 </div>
