@@ -9,7 +9,7 @@ import { VehiculoService } from './vehiculo.service';
 })
 export class VehiculoComponent implements OnInit {
 
-  private vehiculos: Array<Vehiculo> = [];
+  vehiculos: Array<Vehiculo> = [];
 
   constructor(private vehiculoService: VehiculoService) { }
 
